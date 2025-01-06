@@ -20,5 +20,11 @@ from verdevalvet.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index')
+    path('', index, name='index'),
+    path('checkout/', checkout, name='checkout'),
+    path('feedback/', feedback, name='feedback'),
+    path('ticket/', my_ticket, name='my_ticket'),
+    path('contact/', contact, name='contact'),
+    # rute untuk event 
+    path('events/', events, name='events')
 ]
