@@ -20,7 +20,11 @@ from verdevalvet.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+<<<<<<< HEAD
     path('', index, name='index'),
+=======
+    path('', home, name='home'),
+>>>>>>> 977f1b8c4a8f8bdf8c0eb3fb9665ed1a54b0c7ba
     path('checkout/', checkout, name='checkout'),
     path('feedback/', feedback, name='feedback'),
     path('ticket/', my_ticket, name='my_ticket'),
