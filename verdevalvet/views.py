@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from verdevalvet.Controller.Database import *
 
 # Create your views here.
 def index(request):
+    DataEvent = Database.DataEvent(request)
     return render(request, 'index.html')
 
 def checkout(request):
@@ -34,7 +35,10 @@ def feedback(request):
 def my_ticket(request):
     return
 def events(request):
-    return
+    # Mengembalikan render dengan data event
+    return render(request, 'pages/aboutEvent.html')
 def contact(request):
     return
+
+    
 
