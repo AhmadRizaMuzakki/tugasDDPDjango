@@ -3,14 +3,15 @@ from verdevalvet.Controller.Database import *
 
 # Create your views here.
 def index(request):
-    DataEvent = Database.DataEvent(request)
-    return render(request, 'index.html')
+    DataEvent = Database.DataEvent(request)[:4]
+    DataArtis = Database.DataArtis(request)
+    return render(request, 'index.html', {'Event': DataEvent, 'Artis': DataArtis})
 
 def checkout(request):
     # Mengumpulkan data dari form yang dikirimkan
     nama = request.POST.get('nama')
     tanggal = request.POST.get('tanggal')
-    hari = request.POST.get('hari')
+    hari = request.POST.get('waktu')
     paket = request.POST.get('paket')
     
     # Membuat dictionary untuk menyimpan data tiket
@@ -28,17 +29,14 @@ def checkout(request):
     InfoTiket = request.session.get('data_tiket', {})
     
     # Mengembalikan render dengan data tiket yang telah diambil
-    return render(request, 'Tiket.html', {'InfoTiket': InfoTiket})
+    return render(request, 'layout/pesanTiket.html', {'InfoTiket': InfoTiket})
 
 def feedback(request):
     return
 def my_ticket(request):
-    return
+    return render(request, 'pages/cetakTiket.html')
 def events(request):
     # Mengembalikan render dengan data event
-    return render(request, 'pages/aboutEvent.html')
-def contact(request):
-    return
 
-    
+    return render(request, 'pages/aboutEvent.html')
 

@@ -1,0 +1,155 @@
+body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #053B50;
+        }
+
+        header {
+            background-color: #2b2346;
+            color: #fff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fbb03b;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel img {
+            width: 100%;
+            display: block;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+
+        .event-list {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 100%;
+            padding: 20px;
+        }
+        
+        .event-card {
+            background-color: #eee;
+            width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .artis {
+            width: 250px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin: auto;
+            background-color: #64ccc5;
+        }
+
+        .event-card img {
+            width: 300px;
+            height: 200px;
+        }
+
+        .event-card .event-info {
+            padding: 20px;
+        }
+        .event-card h3 {
+            font-size: 20px;
+            color: #333;
+        }
+        
+        .event-card p {
+            overflow: hidden;
+            margin: 5px 0 0;
+            
+            color: #777;
+            font-size: 14px;
+        }
+        .container-fluid {
+            background-color: #053B50;
+            height: 500px;
+            margin-bottom: 100px;
+        }
+        .event-card .rounded-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .event-card .event-info h3 {
+            width: 100%;
+            color: #000000;
+        }
+
+        #panduan-pemesanan-tiket {
+            padding: 40px;
+            background-color: #06e0ce;
+            font-family: Arial, sans-serif;
+        }
+        
+        #panduan-pemesanan-tiket h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        #panduan-pemesanan-tiket p {
+            text-align: center;
+            color: #555;
+        }
+        
+        .accordion-button{
+            background-color: #053B50; color:#fff;
+        }
+        footer {
+            background-color: #2b2346;
+            color: #fff;
+            text-align: center;
+            
+        }
+
+        footer.fixed-bottom a, footer.fixed-bottom i, footer.fixed-bottom p {
+            color: white;
+        }
