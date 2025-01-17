@@ -22,8 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('checkout/', checkout, name='checkout'),
-    path('feedback/', feedback, name='feedback'),
+    # Feedback
+    path('feedback/', feedback_view, name='feedback'),  
+    path('success/', TemplateView_as_view(template_name='success.html'), name='success'),  
+    # Ticket
     path('ticket/', my_ticket, name='my_ticket'),
+    # Contact
     path('contact/', contact, name='contact'),
     # rute untuk event 
     path('events/', events, name='events')
