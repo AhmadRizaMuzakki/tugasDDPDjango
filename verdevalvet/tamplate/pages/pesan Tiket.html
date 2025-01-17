@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiket Acara</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+
+    <div class="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full">
+        <h1 class="text-2xl font-bold text-center mb-4">Tiket Acara</h1>
+        <div class="border-b border-gray-300 mb-4"></div>
+        <form method="post" action="{% url 'checkout' %}">    
+            <div class="mb-4">
+                <label class="text-xl font-semibold" for="nama">Nama</label>
+                <input type="text" id="nama" name="nama" placeholder="Nama" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="text-xl font-semibold" for="tanggal">Tanggal</label>
+                <input type="date" id="tanggal" name="tanggal" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="text-xl font-semibold" for="waktu">Waktu</label>
+                <input type="time" id="waktu" name="waktu" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="text-xl font-semibold" for="lokasi">Lokasi</label>
+                <input type="text" id="lokasi" name="lokasi" placeholder="Masukan Lokasi" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="text-xl font-semibold" for="nomor_kursi">Nomor Kursi</label>
+                <input type="text" id="nomor_kursi" name="nomor_kursi" placeholder="Masukan Kursi" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+            </div>
+
+            <div class="mb-4">
+                <label class="text-xl font-semibold" for="harga">Harga</label>
+                <select name="harga" id="harga" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                    <option value="1000000">1000000</option>
+                    <option value="1000000">500000</option>
+                    <option value="1000000">250000</option>
+                </select>
+            </div>
+
+            <div class="border-b border-gray-300 mb-4"></div>
+
+            <div class="text-center">
+                <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+                    Pesan Tiket
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
