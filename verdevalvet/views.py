@@ -30,8 +30,19 @@ def checkout(request):
     # Mengembalikan render dengan data tiket yang telah diambil
     return render(request, 'Tiket.html', {'InfoTiket': InfoTiket})
 
-def feedback(request):
-    return
+def feedback_view(request):
+    if request.method == 'POST':  
+        form = FeedbackForm(request.POST)  
+        if form.is_valid():  
+            form.save()  
+            return redirect('success')
+    
+    else:  
+        form = FeedbackForm()  
+    return render(request, 'feedback.html', {'form': form})  
+
+def TemplateView_as_view(request):
+    return render
 def my_ticket(request):
     return
 def events(request):
