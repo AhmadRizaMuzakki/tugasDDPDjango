@@ -1,0 +1,70 @@
+{% extends "layout/PesanTiket.html" %}
+{% load static %}
+
+
+{% block pesan %}
+
+<div class="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full mx-auto mt-10">
+    <h1 class="text-2xl font-bold text-center mb-4">Tiket Acara</h1>
+    <div class="border-b border-gray-300 mb-4"></div>
+    <form method="post" action="{% url 'my_ticket'  %}">
+        {% csrf_token %}
+        <div class="mb-4">
+            <label class="text-xl font-semibold" for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" placeholder="Nama"
+                class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="text-xl font-semibold" for="tanggal">Sesi</label>
+            <select name="sesi" id="tanggal" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                {% for sesi in Sesi %}
+                <option value="{{ sesi.id }}">{{ sesi.nama }} - {{ sesi.waktu }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+
+        <div class="mb-4">
+            <label class="text-xl font-semibold" for="lokasi">Nama Event</label>
+            <select name="acara" id="lokasi" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                {% for info in infoEvent %}
+                <option value="{{ info.id}}">{{ info.nama }} - {{ info.bangunan }}</option>
+                {% endfor %}
+            </select>
+            </div>
+
+        <div class="mb-4">
+            <label class="text-xl font-semibold" for="nomor_kursi">Nomor Kursi</label>
+            <select name="nomor_kursi" id="nomor_kursi" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                {% for bangku in kursi %}
+                <optgroup label="{{ bangku.kategori }}">
+                    {% for nomor in bangku.nomor %}
+                    <option value="{{ nomor }}">{{ nomor }}</option>
+                    {% endfor %}
+                </optgroup>
+                {% endfor %}
+            </select>
+            </div>
+            
+            <div class="mb-4">
+            <label class="text-xl font-semibold" for="harga">Harga</label>
+            <select name="harga" id="harga" class="mt-1 block w-full border border-gray-300 rounded-md p-2" required>
+                {% for info_tikect in kategori %}
+                <optgroup label="{{ info_tikect.grade }}">
+                    <option value="{{ info_tikect.harga }}">{{ info_tikect.harga }}</option>
+                </optgroup>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="border-b border-gray-300 mb-4"></div>
+
+        <div class="text-center">
+            <button type="submit" class="bg-blue-500 text-white font-bold py-2 px-4 rounded">
+                Pesan Tiket
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
