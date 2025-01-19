@@ -4,7 +4,12 @@ body {
             padding: 0;
             background-color: #053B50;
         }
-
+        .bg-green-secondry{
+            background-color: #176B87;
+        }
+        .bg-green{
+            border-color: #053B50;
+        }
         header {
             background-color: #2b2346;
             color: #fff;
@@ -106,11 +111,7 @@ body {
             color: #777;
             font-size: 14px;
         }
-        .container-fluid {
-            background-color: #053B50;
-            height: 500px;
-            margin-bottom: 100px;
-        }
+        
         .event-card .rounded-circle {
             width: 150px;
             height: 150px;

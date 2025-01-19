@@ -22,9 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('checkout/', checkout, name='checkout'),
-    path('feedback/', feedback, name='feedback'),
     path('ticket/', my_ticket, name='my_ticket'),
-    path('contact/', contact, name='contact'),
     # rute untuk event 
-    path('events/', events, name='events')
+    path('about/<int:id>/', about, name='about_event'),
+    path('about/<int:id>/comment', addComment, name='addComment')
 ]
